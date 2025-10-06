@@ -18,12 +18,12 @@ const SearchForm = ({ onSearch, loading }) => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search the web..."
-          className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg text-base transition-colors focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 disabled:opacity-50"
+          className="flex-1 px-4 py-3 border-2 border-neutral-200 rounded-lg text-base transition-colors focus:outline-none focus:border-black focus:ring-4 focus:ring-neutral-200 disabled:opacity-50"
           disabled={loading}
         />
         <button 
           type="submit" 
-          className="px-8 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg font-semibold cursor-pointer transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none"
+          className="px-8 py-3 bg-black text-white rounded-lg font-semibold cursor-pointer transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none"
           disabled={loading || !query.trim()}
         >
           {loading ? 'Searching...' : 'Search'}

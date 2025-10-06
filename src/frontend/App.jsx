@@ -36,10 +36,10 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
-      <header className="bg-gradient-to-br from-indigo-500 to-purple-600 text-white py-8 px-4 text-center shadow-lg">
+    <div className="min-h-screen flex flex-col bg-white text-black">
+      <header className="bg-black text-white py-8 px-4 text-center border-b border-neutral-800">
         <h1 className="text-4xl md:text-5xl font-semibold mb-2">Flummoxed Search</h1>
-        <p className="text-lg md:text-xl opacity-90">Search the web with our custom search engine</p>
+        <p className="text-lg md:text-xl opacity-80">Search the web with our custom search engine</p>
       </header>
       
       <main className="flex-1 max-w-4xl mx-auto px-4 py-8 w-full">

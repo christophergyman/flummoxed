@@ -14,6 +14,9 @@ func sendBraveSearchRequest(query, apiKey string) (int, []byte, error) {
 		Timeout: 10 * time.Second,
 	}
 
+	// Debug: log the user's query
+	fmt.Printf("BraveSearch debug - query: %q\n", query)
+
 	escapedQuery := url.QueryEscape(query)
 	fullURL := fmt.Sprintf("https://api.search.brave.com/res/v1/web/search?q=%s", escapedQuery)
 

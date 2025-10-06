@@ -81,6 +81,19 @@ coverage/
 # Vite
 dist-ssr/
 *.local
+.vite/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# ESLint cache
+.eslintcache
+
+# npm cache directory
+.npm/
+
+# Backend generated output
+src/backend/output/
 
 # Temporary folders
 tmp/
