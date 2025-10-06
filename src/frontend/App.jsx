@@ -47,7 +47,7 @@ function App() {
       {/* Initial state: search bar centered */}
       {!hasSearched && (
         <main className="flex-1 flex items-center justify-center p-4">
-          <div className="w-full max-w-2xl">
+          <div className="w-full max-w-4xl px-4 mx-auto">
             <SearchForm onSearch={handleSearch} loading={loading} />
           </div>
         </main>
@@ -60,7 +60,7 @@ function App() {
             <SearchResults results={results} loading={loading} error={error} />
           </main>
           <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-neutral-200 p-4 shadow-lg z-10">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl px-4 mx-auto w-full">
               <SearchForm onSearch={handleSearch} loading={loading} />
             </div>
           </div>

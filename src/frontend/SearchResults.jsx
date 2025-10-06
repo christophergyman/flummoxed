@@ -1,6 +1,17 @@
 import React from 'react';
+import DOMPurify from 'dompurify';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+import {
+  Empty,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+} from "@/components/ui/empty";
+import { Spinner } from "@/components/ui/spinner";
 
 // Component to display individual search result
 const SearchResult = ({ result }) => {
@@ -18,7 +29,10 @@ const SearchResult = ({ result }) => {
       </h3>
       <p className="text-neutral-500 text-sm mb-2 break-all">{result.url}</p>
       {result.description && (
-        <p className="text-neutral-700 leading-relaxed mb-2">{result.description}</p>
+        <p
+          className="text-neutral-700 leading-relaxed mb-2"
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(result.description) }}
+        />
       )}
       {result.age && (
         <span className="text-neutral-500 text-xs italic">{result.age}</span>
@@ -27,16 +41,34 @@ const SearchResult = ({ result }) => {
   );
 };
 
+// Loading component with centered overlay
+const SpinnerEmpty = () => {
+  return (
+    <div className="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 flex items-center justify-center">
+      <Empty className="w-full max-w-md">
+        <EmptyHeader>
+          <EmptyMedia variant="icon">
+            <Spinner />
+          </EmptyMedia>
+          <EmptyTitle>Processing your request</EmptyTitle>
+          <EmptyDescription>
+            Please wait while we process your request. Do not refresh the page.
+          </EmptyDescription>
+        </EmptyHeader>
+        <EmptyContent>
+          <Button variant="outline" size="sm">
+            Cancel
+          </Button>
+        </EmptyContent>
+      </Empty>
+    </div>
+  );
+};
+
 // Main component to display all search results
 const SearchResults = ({ results, loading, error }) => {
   if (loading) {
-    return (
-      <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-        <div className="p-8 text-center text-neutral-500">
-          <p>Searching...</p>
-        </div>
-      </div>
-    );
+    return <SpinnerEmpty />;
   }
 
   if (error) {
