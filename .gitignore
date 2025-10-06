@@ -144,3 +144,97 @@ dist-ssr/
 
 # OS generated files
 Thumbs.db
+
+# C/C++ build artifacts
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+*.dSYM/
+*.dwarf
+*.elf
+*.bin
+*.hex
+
+# C/C++ temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+*.orig
+*.rej
+
+# Build directories
+build/
+bin/
+obj/
+Debug/
+Release/
+output/
+dist/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+# Make
+*.make
+Makefile.in
+aclocal.m4
+autom4te.cache/
+config.h
+config.h.in
+config.log
+config.status
+configure
+libtool
+stamp-h1
+
+# GCC/Clang
+*.gch
+*.pch
+*.d
+*.deps
+*.la
+*.lo
+*.slo
+*.o.d
+
+# IDE files
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Profiling
+*.prof
+*.gcov
+*.gcda
+*.gcno
+gmon.out
+callgrind.out.*
+cachegrind.out.*
+massif.out.*
+
+# Static analysis
+*.sarif
+cppcheck-results.xml
