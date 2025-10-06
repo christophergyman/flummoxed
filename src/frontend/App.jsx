@@ -40,7 +40,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col bg-white text-black">
       <header className="bg-black text-white py-8 px-4 text-center border-b border-neutral-800">
-        <h1 className="text-4xl md:text-5xl font-semibold mb-2">Flummoxed Search</h1>
+        <a href="/" className="text-4xl md:text-5xl font-semibold mb-2 inline-block">Flummoxed Search</a>
         <p className="text-lg md:text-xl opacity-80">Search the web with our custom search engine</p>
       </header>
       
