@@ -1,16 +1,18 @@
 import React from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 // Component to display individual search result
 const SearchResult = ({ result }) => {
   return (
-    <div className="p-6 border-b border-neutral-200 transition-colors hover:bg-neutral-50 last:border-b-0">
+    <div className="p-6">
       <h3 className="mb-2">
-        <a 
-          href={result.url} 
-          target="_blank" 
+        <a
+          href={result.url}
+          target="_blank"
           rel="noopener noreferrer"
           className="text-black no-underline text-lg font-medium leading-snug hover:underline"
-      >
+        >
           {result.title}
         </a>
       </h3>
@@ -58,16 +60,19 @@ const SearchResults = ({ results, loading, error }) => {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-      <div className="bg-neutral-50 px-6 py-4 border-b border-neutral-200">
-        <h2 className="text-neutral-800 text-lg font-semibold">Search Results ({results.length})</h2>
-      </div>
-      <div>
+    <Card className="bg-white text-black border border-neutral-200">
+      <CardHeader className="bg-neutral-50 border-b border-neutral-200">
+        <CardTitle className="text-neutral-900 text-lg">Search Results ({results.length})</CardTitle>
+      </CardHeader>
+      <CardContent className="p-0">
         {results.map((result, index) => (
-          <SearchResult key={index} result={result} />
+          <div key={index}>
+            <SearchResult result={result} />
+            {index < results.length - 1 && <Separator className="bg-neutral-200" />}
+          </div>
         ))}
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 
